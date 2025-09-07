@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
+  runApp(
+    MaterialApp(
+      home: Home(), // Now Home() can be correctly found
+    ),
+  );
+}
+
+// Define the Home class OUTSIDE the main function
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: const Text("Todo List App"),
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.red,
       ),
       body: Center(
-        child: Text( // The Text widget is the child of Center
-          "No tasks yet!!!",
-          style: TextStyle( // Apply the TextStyle to the Text widget
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.red,
-            fontFamily: 'RobotoMono',
-          ),
+        child: Icon(
+          Icons.airport_shuttle,
+          color: Colors.lightBlue,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.red,
-        child: Text("click"), // It's good practice to make this an Icon for FABs
-        // e.g., child: Icon(Icons.add)
+        child: Text(
+          "click",
+        ),
       ),
-    ),
-  ));
+    );
+  }
 }
+
