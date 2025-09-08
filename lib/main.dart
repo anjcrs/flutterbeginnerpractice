@@ -1,40 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbeginnerpractice/pages/firstpage.dart';
 
-
-void main() {
-  runApp(
-    MaterialApp(
-      home: Home(), // Now Home() can be correctly found
-    ),
-  );
+void  main() {
+  runApp(MyApp());
 }
 
-// Define the Home class OUTSIDE the main function
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Todo List App"),
-        centerTitle: true,
-        backgroundColor: Colors.red,
-      ),
-      body: Center(
-        child: Icon(
-          Icons.airport_shuttle,
-          color: Colors.lightBlue,
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.red,
-        child: Text(
-          "click",
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FirstPage(),
+      routes: {
+        '/firstpage': (context) => FirstPage(),
+      },
     );
   }
 }
-
